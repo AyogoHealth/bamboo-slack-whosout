@@ -113,7 +113,7 @@ def lambda_handler(event, context):
         names.append("{0} (Back {1})".format(who.get("name"), get_return_time_friendly(who.get("end"))))
 
     if names:
-      text = "*Who's out today:* {}".format(', '.join(names))
+      text = "*Who's out today:* \n{}".format('\n'.join(names))
       posttoslack(text)
   else:
     posttoslack("Nobody is out today! :tada:")
